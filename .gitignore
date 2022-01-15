@@ -1,0 +1,4 @@
+*.csv
+sources
+node_modules
+out
