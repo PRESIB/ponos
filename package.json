@@ -1,0 +1,33 @@
+{
+  "name": "ponos",
+  "version": "1.0.0",
+  "description": "Log analysis of PRESIB's  Playground net ",
+  "main": "parse.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node out/parse.js",
+    "prestart": "tsc",
+    "clear": "rm -R out && rm result.csv"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nfriacowboy/ponos.git"
+  },
+  "keywords": [
+    "presib",
+    "renew",
+    "hms"
+  ],
+  "author": "Nuno Fernandes",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/nfriacowboy/ponos/issues"
+  },
+  "homepage": "https://github.com/nfriacowboy/ponos#readme",
+  "dependencies": {
+    "json2csv": "^5.0.6"
+  },
+  "devDependencies": {
+    "@types/node": "^17.0.8"
+  }
+}
