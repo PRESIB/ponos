@@ -161,7 +161,7 @@ readFile('./sources/simulation.log', (err, data) => {
 
     stepMetric = stepsIntoMetrics(steps);
 
-    const parser = new Parser(csvOpts);
+    /*const parser = new Parser(csvOpts);
     const agregated = agragateResults(stepMetric);
     const csv = parser.parse(agregated);
 
@@ -169,7 +169,7 @@ readFile('./sources/simulation.log', (err, data) => {
     writeFile('result.csv', csv, (err) => {
         if (err) throw err;
         console.log('Data written to file');
-    });
+    });*/
 
 
     console.log(agragateResults(stepMetric));

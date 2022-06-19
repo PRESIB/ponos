@@ -23,8 +23,7 @@ export class FileManager implements IManager{
 
     saveProductionSteps(content:ProductionCicle[], origenFile:string){
         const fileName = `${this.extractFileName(origenFile)}.json`;
-        const destination = path.join(this.config.parse_output_folder, fileName);
-        fs.writeFileSync(destination, JSON.stringify(content));
+        this.saveFile(fileName, JSON.stringify(content));
     }
 
     loadProductionSteps(){
@@ -37,6 +36,15 @@ export class FileManager implements IManager{
 
     saveChart(content:string, prefix:string, origenFile:string){
         const fileName = `${prefix}_${this.extractFileName(origenFile)}.svg`;
+        this.saveFile(fileName, content);
+    }
+
+    saveTable(content:string, prefix:string, origenFile:string){
+        const fileName = `${prefix}_${this.extractFileName(origenFile)}.csv`;
+        this.saveFile(fileName, content);
+    }
+
+    private saveFile(fileName:string, content: string){
         const destination = path.join(this.config.parse_output_folder, fileName);
         fs.writeFileSync(destination, content);
     }
