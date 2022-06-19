@@ -7,8 +7,8 @@
     "ponos": "out/src/index.js"
   },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node out/src/index.js",
+    "test": "yarn build && node . parse -t",
+    "start": "node . ",
     "prestart": "tsc",
     "build": "tsc",
     "clear": "rm -R out && rm result.csv"
@@ -47,7 +47,9 @@
   "dependencies": {
     "commander": "^9.3.0",
     "hidefile": "^3.0.0",
-    "json2csv": "^5.0.6"
+    "inversify": "^6.0.1",
+    "json2csv": "^5.0.6",
+    "reflect-metadata": "^0.1.13"
   },
   "devDependencies": {
     "@types/hidefile": "^3.0.0",
