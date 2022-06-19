@@ -6,7 +6,7 @@ import { PonosConfig } from '../entities/ponos-config';
 import { ponoContainer } from '../inversify.config';
 
 
-export default (  ): void => {
+export default (): void => {
     let config = ponoContainer.get<PonosConfig>(PonosConfig);
     const ponosResults = path.join(homedir(), 'ponosResults');
     const configFolder = path.join(homedir(), 'ponos');

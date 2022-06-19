@@ -45,10 +45,12 @@
   ],
   "private": true,
   "dependencies": {
+    "chartist-svg": "^0.2.4",
     "commander": "^9.3.0",
     "hidefile": "^3.0.0",
     "inversify": "^6.0.1",
     "json2csv": "^5.0.6",
+    "moment": "^2.29.3",
     "reflect-metadata": "^0.1.13"
   },
   "devDependencies": {

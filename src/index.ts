@@ -2,6 +2,7 @@
 
 import { Command } from "commander"
 import "reflect-metadata";
+import charter from "./controllers/charter";
 import configuration from "./controllers/configuration";
 import init from "./controllers/init";
 import parser from "./controllers/parser";
@@ -25,6 +26,10 @@ program
 .option('-d, --directory <in_folder_path>', 'path to the folder with logs to parse')
 //.option('-t, --test', 'test with [reference] file /presib/logs/hermes_ref_log.log', '/presib/logs/hermes_ref_log.log')
 .action(parser);
+
+program
+.command('chart')
+.action(charter)
 
 
 program.parse(process.argv);

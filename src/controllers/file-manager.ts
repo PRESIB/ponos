@@ -22,12 +22,28 @@ export class FileManager implements IManager{
     }
 
     saveProductionSteps(content:ProductionCicle[], origenFile:string){
-        const fileName = this.extractFileName(origenFile);
+        const fileName = `${this.extractFileName(origenFile)}.json`;
         const destination = path.join(this.config.parse_output_folder, fileName);
         fs.writeFileSync(destination, JSON.stringify(content));
     }
 
-    private extractFileName(origenFile:string):string{
-        return `${origenFile.substring(origenFile.lastIndexOf(path.sep) || origenFile.lastIndexOf('.'))}_${Date.now()}.json` ;
+    loadProductionSteps(){
+        return fs.readdirSync(path.normalize(this.config.parse_output_folder));
     }
+
+    stepFileContent(file:string){
+        return this.fileContent(path.join(this.config.parse_output_folder, file))
+    }
+
+    saveChart(content:string, prefix:string, origenFile:string){
+        const fileName = `${prefix}_${this.extractFileName(origenFile)}.svg`;
+        const destination = path.join(this.config.parse_output_folder, fileName);
+        fs.writeFileSync(destination, content);
+    }
+
+    private extractFileName(origenFile:string):string{
+        return `${origenFile.substring(origenFile.lastIndexOf(path.sep) || origenFile.lastIndexOf('.'))}_${Date.now()}` ;
+    }
+
+
 }
