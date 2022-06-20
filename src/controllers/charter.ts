@@ -7,12 +7,8 @@ import { FileManager } from './file-manager';
 import { Parser } from 'json2csv';
 
 
-
-// total de tempo de execução e de transporte e diferença para o total  // pie chart
-
-
 // tempo de execução por rh // barras
-// soma dos tempos de execução por rh //pie chart
+// soma dos tempos de execução por rh //barras chart
 
 
 // qual o rh  mais usado por serviço // tabela
